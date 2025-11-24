@@ -50,18 +50,29 @@ export interface LearnContent {
   id: string;
   theory: string;
   examples: LearnExample[];
+  quiz?: QuizQuestion[];
 }
 
 export interface LearnExample {
   id: string;
   title: string;
   problem: string;
-  solution: SolutionStep[];
+  answer: string;
+  explanation: string;
+  solution?: SolutionStep[]; // Keep for backwards compatibility
 }
 
 export interface SolutionStep {
   id: string;
   step: number;
   description: string;
+  explanation: string;
+}
+
+export interface QuizQuestion {
+  id: string;
+  question: string;
+  options: string[];
+  correctAnswer: number;
   explanation: string;
 }

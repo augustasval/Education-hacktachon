@@ -1,0 +1,32 @@
+{
+  "topics": [
+    {
+      "id": "algebra-basics",
+      "file": "algebra-basics.json",
+      "languages": ["en"],
+      "grade": "9th Grade",
+      "names": {
+        "en": "Algebra Basics"
+      }
+    },
+    {
+      "id": "linear-equations",
+      "file": "linear-equations.json",
+      "languages": ["en"],
+      "grade": "9th Grade",
+      "names": {
+        "en": "Linear Equations"
+      }
+    },
+    {
+      "id": "quadratic-expressions",
+      "file": "quadratic-expressions.json",
+      "languages": ["en", "lt"],
+      "grade": "9th Grade",
+      "names": {
+        "en": "Quadratic Expressions",
+        "lt": "Kvadratiniai Reiškiniai"
+      }
+    }
+  ]
+}

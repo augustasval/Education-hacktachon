@@ -1,0 +1,158 @@
+{
+  "lt": {
+    "id": "kvadratiniai-reiskiniai",
+    "title": "Kvadratiniai Reiškiniai",
+    "theory": "Raidinis reiškinys - tai skaičiai ir kintamieji, sujungti matematinius veiksmus apibrežiančiais ženklais pagal matematikoje priimtas taisykles. Kvadratiniai reiškiniai yra ypatingi dėl to, kad juose kintamojo aukščiausias laipsnis yra 2.\n\nKvadratinio Trinario Samprata:\nKvadratinės lygties ax² + bx + c = 0 (a ≠ 0) kairiojoje pusėje esantis reiškinys ax² + bx + c vadinamas kvadratiniu trinariu. Šiame reiškinyje kintamojo x aukščiausias laipsnis yra 2. Pavyzdžiui, 2x² + 5x + 3 yra kvadratinis trinarys, kuriame a = 2, b = 5, c = 3.\n\nKvadratinio Dvinario Savybės:\nJeigu vienas iš koeficientų b arba c yra lygus nuliui, tai reiškinys ax² + bx arba ax² + c vadinamas kvadratiniu dvinariu. Pavyzdžiui, 3x² + 4x yra kvadratinis dvinarys (c = 0), o 5x² - 7 taip pat yra kvadratinis dvinarys (b = 0).\n\nKvadratinio Vienanario Atpažinimas:\nJeigu abu koeficientai b ir c yra lygūs nuliui, tai reiškinys ax² vadinamas kvadratiniu vienanariu. Pavyzdžiui, 4x² arba -2x² yra kvadratiniai vienanariai. Tai paprasčiausia kvadratinio reiškinio forma.\n\nSkaidymas Daugikliais - Pagrindai:\nKvadratinį trinarį galima išskaidyti daugikliais, jeigu kvadratinė lygtis ax² + bx + c = 0 turi sprendinių. Tai yra vienas iš svarbiausių algebros įgūdžių. Skaidymas leidžia supaprastinti sudėtingus reiškinius ir išspręsti lygtis.\n\nSkaidymo Formulė:\nSkaidant taikoma formulė: ax² + bx + c = a(x - x₁)(x - x₂), kur x₁ ir x₂ yra kvadratinės lygties ax² + bx + c = 0 sprendiniai. Ši formulė reiškia, kad kvadratinį trinarį galime užrašyti kaip koeficiento a ir dviejų dvinarių sandaugą.\n\nSprendinių Radimas:\nNorint išskaidyti kvadratinį trinarį, pirmiausia reikia rasti kvadratinės lygties sprendinius x₁ ir x₂. Tai daroma naudojant kvadratinės lygties formulę: x = (-b ± √(b² - 4ac)) / (2a). Diskriminantas D = b² - 4ac parodo, ar lygtis turi sprendinių.\n\nDiskriminanto Reikšmė:\nJei diskriminantas D > 0, lygtis turi du skirtingus sprendinius ir trinarį galima išskaidyti. Jei D = 0, yra vienas sprendinys ir skaidymas yra a(x - x₁)². Jei D < 0, lygtis neturi realių sprendinių ir trinario negalima išskaidyti realiųjų skaičių aibėje.\n\nSkaidymo Patikrinimas:\nIšskaidę kvadratinį trinarį daugikliais, visada patikrinkite atsakymą atlikdami daugybą. Padauginus a(x - x₁)(x - x₂), turėtumėte gauti pradinį trinarį ax² + bx + c. Tai užtikrina, kad skaidymas atliktas teisingai.\n\nTaikymas Praktikoje:\nKvadratinių reiškinių skaidymas daugikliais naudojamas sprendžiant kvadratines lygtis, supaprastinant trupmenas, faktorizuojant polinomus ir daugelyje kitų algebros uždavinių. Tai fundamentalus įgūdis aukštesnėje matematikoje.",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Kvadratinio Trinario Skaidymas",
+        "problem": "Išskaidykite daugikliais: x² + 5x + 6",
+        "answer": "(x + 2)(x + 3)",
+        "explanation": "1. Nustatome koeficientus: a = 1, b = 5, c = 6\n\n2. Randame diskriminantą: D = b² - 4ac = 25 - 24 = 1\n\n3. Randame sprendinius: x₁ = (-5 + 1)/2 = -2, x₂ = (-5 - 1)/2 = -3\n\n4. Taikome formulę: 1(x - (-2))(x - (-3)) = (x + 2)(x + 3)\n\n5. Patikrinimas: (x + 2)(x + 3) = x² + 3x + 2x + 6 = x² + 5x + 6 ✓"
+      },
+      {
+        "id": "example-2",
+        "title": "Skaidymas su Koeficientu",
+        "problem": "Išskaidykite daugikliais: 2x² + 7x + 3",
+        "answer": "2(x + 3)(x + 0.5) arba (2x + 1)(x + 3)",
+        "explanation": "1. Nustatome koeficientus: a = 2, b = 7, c = 3\n\n2. Randame diskriminantą: D = 49 - 24 = 25\n\n3. Randame sprendinius: x₁ = (-7 + 5)/4 = -0.5, x₂ = (-7 - 5)/4 = -3\n\n4. Taikome formulę: 2(x - (-0.5))(x - (-3)) = 2(x + 0.5)(x + 3)\n\n5. Alternatyvus užrašymas: (2x + 1)(x + 3)"
+      },
+      {
+        "id": "example-3",
+        "title": "Tobulas Kvadratas",
+        "problem": "Išskaidykite daugikliais: x² - 6x + 9",
+        "answer": "(x - 3)²",
+        "explanation": "1. Nustatome koeficientus: a = 1, b = -6, c = 9\n\n2. Randame diskriminantą: D = 36 - 36 = 0\n\n3. Randame sprendinį: x = 6/2 = 3 (vienas sprendinys)\n\n4. Kai D = 0, gauname tobulą kvadratą: (x - 3)²\n\n5. Patikrinimas: (x - 3)² = x² - 6x + 9 ✓"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "quiz-1",
+        "question": "Kas yra kvadratinis trinarys?",
+        "options": [
+          "Reiškinys, kuriame kintamojo aukščiausias laipsnis yra 3",
+          "Reiškinys ax² + bx + c, kur a ≠ 0",
+          "Reiškinys, turintis tik vieną narį",
+          "Bet koks algebrinis reiškinys"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Kvadratinis trinarys yra reiškinys ax² + bx + c, kuriame a ≠ 0 ir kintamojo aukščiausias laipsnis yra 2."
+      },
+      {
+        "id": "quiz-2",
+        "question": "Kada kvadratinį trinarį galima išskaidyti daugikliais?",
+        "options": [
+          "Visada galima išskaidyti",
+          "Kai diskriminantas D ≥ 0",
+          "Kai a = 1",
+          "Kai b = 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Kvadratinį trinarį galima išskaidyti realiųjų skaičių aibėje, kai diskriminantas D = b² - 4ac yra didesnis arba lygus nuliui."
+      },
+      {
+        "id": "quiz-3",
+        "question": "Kokia yra skaidymo daugikliais formulė?",
+        "options": [
+          "ax² + bx + c = (x + x₁)(x + x₂)",
+          "ax² + bx + c = a(x - x₁)(x - x₂)",
+          "ax² + bx + c = (ax + x₁)(x + x₂)",
+          "ax² + bx + c = a(x + x₁) + (x + x₂)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Teisinga formulė yra ax² + bx + c = a(x - x₁)(x - x₂), kur x₁ ir x₂ yra lygties sprendiniai."
+      },
+      {
+        "id": "quiz-4",
+        "question": "Koks reiškinys yra kvadratinis dvinarys?",
+        "options": [
+          "3x² + 4x + 5",
+          "2x + 3",
+          "5x² + 7",
+          "x³ + 2x"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Kvadratinis dvinarys turi formą ax² + bx arba ax² + c. Reiškinys 5x² + 7 yra kvadratinis dvinarys (b = 0)."
+      }
+    ]
+  },
+  "en": {
+    "id": "quadratic-expressions",
+    "title": "Quadratic Expressions",
+    "theory": "An algebraic expression consists of numbers and variables connected by mathematical operation symbols according to accepted mathematical rules. Quadratic expressions are special because the highest power of the variable is 2.\n\nUnderstanding Quadratic Trinomials:\nThe expression ax² + bx + c on the left side of the quadratic equation ax² + bx + c = 0 (where a ≠ 0) is called a quadratic trinomial. In this expression, the highest power of variable x is 2. For example, 2x² + 5x + 3 is a quadratic trinomial where a = 2, b = 5, and c = 3.\n\nProperties of Quadratic Binomials:\nIf one of the coefficients b or c equals zero, then the expression ax² + bx or ax² + c is called a quadratic binomial. For example, 3x² + 4x is a quadratic binomial (c = 0), and 5x² - 7 is also a quadratic binomial (b = 0).\n\nRecognizing Quadratic Monomials:\nIf both coefficients b and c equal zero, then the expression ax² is called a quadratic monomial. For example, 4x² or -2x² are quadratic monomials. This is the simplest form of a quadratic expression.\n\nFactoring Fundamentals:\nA quadratic trinomial can be factored if the quadratic equation ax² + bx + c = 0 has solutions. This is one of the most important algebraic skills. Factoring allows us to simplify complex expressions and solve equations more easily.\n\nThe Factoring Formula:\nWhen factoring, we use the formula: ax² + bx + c = a(x - x₁)(x - x₂), where x₁ and x₂ are the solutions of the quadratic equation ax² + bx + c = 0. This formula means we can write a quadratic trinomial as a product of the coefficient a and two binomials.\n\nFinding the Solutions:\nTo factor a quadratic trinomial, first find the solutions x₁ and x₂ of the quadratic equation. This is done using the quadratic formula: x = (-b ± √(b² - 4ac)) / (2a). The discriminant D = b² - 4ac tells us whether the equation has solutions.\n\nThe Discriminant's Significance:\nIf discriminant D > 0, the equation has two distinct solutions and the trinomial can be factored. If D = 0, there is one solution and the factoring is a(x - x₁)². If D < 0, the equation has no real solutions and the trinomial cannot be factored in the set of real numbers.\n\nVerifying Your Factorization:\nAfter factoring a quadratic trinomial, always check your answer by multiplying. When you multiply a(x - x₁)(x - x₂), you should get the original trinomial ax² + bx + c. This ensures the factoring was done correctly.\n\nPractical Applications:\nFactoring quadratic expressions is used in solving quadratic equations, simplifying fractions, factoring polynomials, and many other algebra problems. It's a fundamental skill in higher mathematics and has applications in physics, engineering, and economics.",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Factoring a Quadratic Trinomial",
+        "problem": "Factor: x² + 5x + 6",
+        "answer": "(x + 2)(x + 3)",
+        "explanation": "1. Identify coefficients: a = 1, b = 5, c = 6\n\n2. Calculate discriminant: D = b² - 4ac = 25 - 24 = 1\n\n3. Find solutions: x₁ = (-5 + 1)/2 = -2, x₂ = (-5 - 1)/2 = -3\n\n4. Apply formula: 1(x - (-2))(x - (-3)) = (x + 2)(x + 3)\n\n5. Verification: (x + 2)(x + 3) = x² + 3x + 2x + 6 = x² + 5x + 6 ✓"
+      },
+      {
+        "id": "example-2",
+        "title": "Factoring with Leading Coefficient",
+        "problem": "Factor: 2x² + 7x + 3",
+        "answer": "2(x + 3)(x + 0.5) or (2x + 1)(x + 3)",
+        "explanation": "1. Identify coefficients: a = 2, b = 7, c = 3\n\n2. Calculate discriminant: D = 49 - 24 = 25\n\n3. Find solutions: x₁ = (-7 + 5)/4 = -0.5, x₂ = (-7 - 5)/4 = -3\n\n4. Apply formula: 2(x - (-0.5))(x - (-3)) = 2(x + 0.5)(x + 3)\n\n5. Alternative form: (2x + 1)(x + 3)"
+      },
+      {
+        "id": "example-3",
+        "title": "Perfect Square",
+        "problem": "Factor: x² - 6x + 9",
+        "answer": "(x - 3)²",
+        "explanation": "1. Identify coefficients: a = 1, b = -6, c = 9\n\n2. Calculate discriminant: D = 36 - 36 = 0\n\n3. Find solution: x = 6/2 = 3 (one solution)\n\n4. When D = 0, we get a perfect square: (x - 3)²\n\n5. Verification: (x - 3)² = x² - 6x + 9 ✓"
+      }
+    ],
+    "quiz": [
+      {
+        "id": "quiz-1",
+        "question": "What is a quadratic trinomial?",
+        "options": [
+          "An expression where the highest power of the variable is 3",
+          "An expression ax² + bx + c where a ≠ 0",
+          "An expression with only one term",
+          "Any algebraic expression"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A quadratic trinomial is an expression ax² + bx + c where a ≠ 0 and the highest power of the variable is 2."
+      },
+      {
+        "id": "quiz-2",
+        "question": "When can a quadratic trinomial be factored?",
+        "options": [
+          "Always",
+          "When discriminant D ≥ 0",
+          "When a = 1",
+          "When b = 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A quadratic trinomial can be factored in the set of real numbers when the discriminant D = b² - 4ac is greater than or equal to zero."
+      },
+      {
+        "id": "quiz-3",
+        "question": "What is the factoring formula?",
+        "options": [
+          "ax² + bx + c = (x + x₁)(x + x₂)",
+          "ax² + bx + c = a(x - x₁)(x - x₂)",
+          "ax² + bx + c = (ax + x₁)(x + x₂)",
+          "ax² + bx + c = a(x + x₁) + (x + x₂)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The correct formula is ax² + bx + c = a(x - x₁)(x - x₂), where x₁ and x₂ are the solutions of the equation."
+      },
+      {
+        "id": "quiz-4",
+        "question": "Which expression is a quadratic binomial?",
+        "options": [
+          "3x² + 4x + 5",
+          "2x + 3",
+          "5x² + 7",
+          "x³ + 2x"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A quadratic binomial has the form ax² + bx or ax² + c. The expression 5x² + 7 is a quadratic binomial (b = 0)."
+      }
+    ]
+  }
+}

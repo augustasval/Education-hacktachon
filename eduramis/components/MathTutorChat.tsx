@@ -9,8 +9,10 @@ import TopicSelector from './TopicSelector';
 import ToggleSwitch from './ToggleSwitch';
 import PracticeProblems from './PracticeProblems';
 import LearnContent from './LearnContent';
+import LearnContentChunked from './LearnContentChunked';
 import { PracticeProblem, type LearnContent as LearnContentType } from '@/lib/anthropic';
 import { loadLearnContent, hasLocalContent } from '@/lib/learn-content-loader';
+import { loadChunkedLearnContent, hasChunkedLocalContent, type ChunkedContent } from '@/lib/chunked-content-loader';
 
 interface Message {
   id: string;
@@ -28,11 +30,13 @@ export default function MathTutorChat() {
   const [practiceProblems, setPracticeProblems] = useState<PracticeProblem[]>([]);
   const [isGeneratingProblems, setIsGeneratingProblems] = useState(false);
   const [learnContent, setLearnContent] = useState<LearnContentType | null>(null);
+  const [chunkedContent, setChunkedContent] = useState<ChunkedContent | null>(null);
   const [isGeneratingLearnContent, setIsGeneratingLearnContent] = useState(false);
   const [activeTab, setActiveTab] = useState<'learn' | 'practice' | 'chat' | 'mistakes' | 'plan'>('learn');
+  const [language, setLanguage] = useState<'en' | 'lt'>('en');
   
   // Get grade, topic, and step-by-step mode from Zustand store
-  const { selectedGrade, selectedTopic, stepByStepMode, setStepByStepMode } = useMathTutorStore();
+  const { selectedGrade, selectedTopic, stepByStepMode, setStepByStepMode} = useMathTutorStore();
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -146,24 +150,35 @@ export default function MathTutorChat() {
 
     setIsGeneratingLearnContent(true);
     try {
-      // Try to load local content first
-      let content = await loadLearnContent(selectedGrade, selectedTopic.name);
+      // First try to load chunked content for interactive learning
+      const chunked = await loadChunkedLearnContent(selectedGrade, selectedTopic.name);
+      
+      if (chunked) {
+        console.log('Using chunked interactive content for', selectedGrade, selectedTopic.name);
+        setChunkedContent({[selectedTopic.name.toLowerCase().replace(/\s+/g, '-')]: chunked});
+        setLearnContent(null); // Clear regular content when using chunked
+        return;
+      }
+
+      // Fallback to regular local content
+      let content = await loadLearnContent(selectedGrade, selectedTopic.name, language);
       
       // If no local content available, use AI generation
       if (!content) {
         console.log('No local content found, using AI generation...');
         content = await tutorAPI.generateLearnContent(selectedGrade, selectedTopic.name);
       } else {
-        console.log('Using local content for', selectedGrade, selectedTopic.name);
+        console.log('Using regular local content for', selectedGrade, selectedTopic.name, 'in', language);
       }
       
       setLearnContent(content);
+      setChunkedContent(null); // Clear chunked content when using regular
     } catch (error) {
       console.error('Error generating learn content:', error);
     } finally {
       setIsGeneratingLearnContent(false);
     }
-  }, [selectedGrade, selectedTopic, isGeneratingLearnContent]);
+  }, [selectedGrade, selectedTopic, isGeneratingLearnContent, language]);
 
   const handleAskLearnQuestion = useCallback(async (question: string, context: string) => {
     if (!selectedGrade || !selectedTopic) return;
@@ -237,17 +252,18 @@ export default function MathTutorChat() {
     }
   }, [selectedGrade, selectedTopic]);
 
-  // Clear learn content when grade/topic changes
+  // Clear learn content when grade/topic/language changes
   useEffect(() => {
     setLearnContent(null);
-  }, [selectedGrade, selectedTopic]);
+    setChunkedContent(null);
+  }, [selectedGrade, selectedTopic, language]);
 
-  // Auto-generate learn content when grade/topic changes
+  // Auto-generate learn content when grade/topic/language changes
   useEffect(() => {
-    if (selectedGrade && selectedTopic && activeTab === 'learn' && !learnContent && !isGeneratingLearnContent) {
+    if (selectedGrade && selectedTopic && activeTab === 'learn' && !learnContent && !chunkedContent && !isGeneratingLearnContent) {
       handleGenerateLearnContent();
     }
-  }, [selectedGrade, selectedTopic, activeTab, learnContent, isGeneratingLearnContent, handleGenerateLearnContent]);
+  }, [selectedGrade, selectedTopic, language, activeTab, learnContent, chunkedContent, isGeneratingLearnContent, handleGenerateLearnContent]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -287,6 +303,33 @@ export default function MathTutorChat() {
               <GradeSelector compact />
               <TopicSelector compact />
               <div className="pt-4 border-t border-blue-200">
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Language / Kalba
+                  </label>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setLanguage('en')}
+                      className={`flex-1 px-4 py-2 rounded-lg border-2 transition-colors ${
+                        language === 'en'
+                          ? 'border-blue-500 bg-blue-50 text-blue-700'
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => setLanguage('lt')}
+                      className={`flex-1 px-4 py-2 rounded-lg border-2 transition-colors ${
+                        language === 'lt'
+                          ? 'border-blue-500 bg-blue-50 text-blue-700'
+                          : 'border-gray-300 hover:border-gray-400'
+                      }`}
+                    >
+                      Lietuvių
+                    </button>
+                  </div>
+                </div>
                 <ToggleSwitch
                   checked={stepByStepMode}
                   onChange={setStepByStepMode}
@@ -302,15 +345,16 @@ export default function MathTutorChat() {
       {/* Tab Navigation */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="flex space-x-6 overflow-x-auto">
-            <button
-              onClick={() => setActiveTab('learn')}
-              className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
-                activeTab === 'learn'
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-              }`}
-            >
+          <div className="flex justify-between items-center">
+            <div className="flex space-x-6 overflow-x-auto">
+              <button
+                onClick={() => setActiveTab('learn')}
+                className={`py-4 px-1 border-b-2 font-medium text-sm transition-colors whitespace-nowrap ${
+                  activeTab === 'learn'
+                    ? 'border-blue-500 text-blue-600'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+              >
               <div className="flex items-center gap-2">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -399,6 +443,17 @@ export default function MathTutorChat() {
               </div>
             </button>
           </div>
+          <button
+            onClick={() => setShowSettings(!showSettings)}
+            className="py-4 px-3 text-gray-600 hover:text-blue-600 transition-colors"
+            title="Settings"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </button>
+        </div>
         </div>
       </div>
 
@@ -406,12 +461,19 @@ export default function MathTutorChat() {
       <div className="flex-1 overflow-y-auto bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 py-6">
           {activeTab === 'learn' ? (
-            // Learn Content
-            <LearnContent 
-              content={learnContent} 
-              onAskQuestion={handleAskLearnQuestion}
-              isLoading={isGeneratingLearnContent}
-            />
+            // Learn Content - use chunked if available, otherwise regular
+            chunkedContent && selectedTopic ? (
+              <LearnContentChunked 
+                content={chunkedContent}
+                selectedTopic={selectedTopic.name.toLowerCase().replace(/\s+/g, '-')}
+              />
+            ) : (
+              <LearnContent 
+                content={learnContent} 
+                onAskQuestion={handleAskLearnQuestion}
+                isLoading={isGeneratingLearnContent}
+              />
+            )
           ) : activeTab === 'practice' ? (
             // Practice Problems
             <div>

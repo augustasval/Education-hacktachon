@@ -33,6 +33,9 @@ export const mathTopics: MathTopic[] = [
   
   // High School (9-12)
   { id: 'algebra1', name: 'Algebra I', description: 'Linear equations, inequalities, systems', grades: ['9th Grade', '10th Grade'] },
+  { id: 'algebra-basics', name: 'Algebra Basics', description: 'Variables, expressions, simplification', grades: ['9th Grade'] },
+  { id: 'linear-equations', name: 'Linear Equations', description: 'Solving linear equations step by step', grades: ['9th Grade', '10th Grade'] },
+  { id: 'quadratic-expressions', name: 'Quadratic Expressions', description: 'Quadratic trinomials, binomials, factoring', grades: ['9th Grade', '10th Grade'] },
   { id: 'geometry-advanced', name: 'Geometry (Advanced)', description: 'Proofs, theorems, advanced shapes', grades: ['9th Grade', '10th Grade'] },
   { id: 'algebra2', name: 'Algebra II', description: 'Quadratics, polynomials, exponentials', grades: ['10th Grade', '11th Grade'] },
   { id: 'trigonometry', name: 'Trigonometry', description: 'Trig functions, identities, applications', grades: ['11th Grade', '12th Grade'] },

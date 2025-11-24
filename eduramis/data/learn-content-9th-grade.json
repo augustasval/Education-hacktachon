@@ -1,0 +1,428 @@
+{
+  "algebra-basics": {
+    "id": "algebra-basics",
+    "theory": "Algebra is a branch of mathematics that uses letters and symbols to represent numbers and quantities in formulas and equations. The fundamental concept is that we can perform operations on unknown values (variables) just like we do with regular numbers.\n\nKey Concepts:\n• Variables: Letters (like x, y, a, b) that represent unknown numbers\n• Constants: Fixed numbers in an expression\n• Terms: Parts of an expression separated by + or - signs\n• Coefficients: Numbers that multiply variables (in 3x, the coefficient is 3)\n• Like Terms: Terms that have the same variables raised to the same powers\n\nBasic Rules:\n• You can add or subtract like terms: 3x + 2x = 5x\n• When multiplying variables: x × x = x²\n• When dividing variables: x⁴ ÷ x² = x²\n• Distribution: a(b + c) = ab + ac",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Simplifying Algebraic Expressions",
+        "problem": "Simplify: 3x + 2y + 5x - y + 7",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Identify like terms",
+            "explanation": "Like terms have the same variables. Here we have: x terms (3x, 5x), y terms (2y, -y), and constants (7)"
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Group like terms together",
+            "explanation": "Rearrange: (3x + 5x) + (2y - y) + 7. This makes it easier to combine similar terms."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Combine like terms",
+            "explanation": "3x + 5x = 8x (add coefficients), 2y - y = 1y = y (subtract coefficients)"
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Write the final simplified expression",
+            "explanation": "The result is 8x + y + 7. This cannot be simplified further as all terms are different."
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Distributive Property",
+        "problem": "Expand and simplify: 2(3x + 4) - 3(x - 1)",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Apply distributive property to first term",
+            "explanation": "2(3x + 4) = 2×3x + 2×4 = 6x + 8. Multiply each term inside parentheses by 2."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Apply distributive property to second term",
+            "explanation": "-3(x - 1) = -3×x + (-3)×(-1) = -3x + 3. Remember that negative times negative equals positive."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Write out the full expression",
+            "explanation": "Now we have: 6x + 8 - 3x + 3. All parentheses have been eliminated."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Combine like terms",
+            "explanation": "x terms: 6x - 3x = 3x. Constants: 8 + 3 = 11. Final answer: 3x + 11"
+          }
+        ]
+      }
+    ]
+  },
+  "linear-equations": {
+    "id": "linear-equations",
+    "theory": "Linear equations are equations where the highest power of the variable is 1. They represent straight lines when graphed and have the general form ax + b = c.\n\nSolving Linear Equations:\nThe goal is to isolate the variable (usually x) on one side of the equation. We do this by performing the same operation on both sides of the equation.\n\nKey Steps:\n1. Simplify both sides if needed (combine like terms, distribute)\n2. Move variables to one side, constants to the other\n3. Use inverse operations (addition ↔ subtraction, multiplication ↔ division)\n4. Check your answer by substituting back\n\nImportant Rules:\n• Whatever you do to one side, you must do to the other side\n• Addition and subtraction are inverse operations\n• Multiplication and division are inverse operations\n• Always check your solution in the original equation",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Basic Linear Equation",
+        "problem": "Solve for x: 3x + 7 = 22",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Subtract 7 from both sides",
+            "explanation": "To isolate the term with x, we need to eliminate the +7. Subtracting 7 from both sides: 3x + 7 - 7 = 22 - 7, which gives us 3x = 15"
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Divide both sides by 3",
+            "explanation": "To isolate x, we divide both sides by the coefficient 3: 3x ÷ 3 = 15 ÷ 3, which gives us x = 5"
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Check the solution",
+            "explanation": "Substitute x = 5 into the original equation: 3(5) + 7 = 15 + 7 = 22 ✓. The solution is correct."
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Equation with Variables on Both Sides",
+        "problem": "Solve for x: 5x - 3 = 2x + 9",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Subtract 2x from both sides",
+            "explanation": "We want all x terms on one side. Subtracting 2x from both sides: 5x - 2x - 3 = 2x - 2x + 9, which gives us 3x - 3 = 9"
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Add 3 to both sides",
+            "explanation": "To isolate the x term, add 3 to both sides: 3x - 3 + 3 = 9 + 3, which gives us 3x = 12"
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Divide both sides by 3",
+            "explanation": "Divide by the coefficient: 3x ÷ 3 = 12 ÷ 3, so x = 4"
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Verify the solution",
+            "explanation": "Check: 5(4) - 3 = 20 - 3 = 17, and 2(4) + 9 = 8 + 9 = 17. Both sides equal 17 ✓"
+          }
+        ]
+      }
+    ]
+  },
+  "quadratic-equations": {
+    "id": "quadratic-equations",
+    "theory": "Quadratic equations are polynomial equations of degree 2, meaning the highest power of the variable is 2. The standard form is ax² + bx + c = 0, where a ≠ 0.\n\nSolving Methods:\n\n1. Factoring: Find two numbers that multiply to give 'ac' and add to give 'b'\n2. Quadratic Formula: x = (-b ± √(b² - 4ac)) / (2a)\n3. Completing the Square: Rewrite as a perfect square trinomial\n4. Graphing: Find where the parabola crosses the x-axis\n\nThe Discriminant (b² - 4ac):\n• If > 0: Two real solutions\n• If = 0: One real solution (repeated root)\n• If < 0: No real solutions (complex solutions)\n\nQuadratic graphs are parabolas that open up (a > 0) or down (a < 0).",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Solving by Factoring",
+        "problem": "Solve: x² + 5x + 6 = 0",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Find two numbers that multiply to 6 and add to 5",
+            "explanation": "We need factors of 6 that add to 5. The pairs are: 1×6=6, 1+6=7 (no), 2×3=6, 2+3=5 (yes!). So we use 2 and 3."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Write the factored form",
+            "explanation": "x² + 5x + 6 = (x + 2)(x + 3) = 0. We can verify: (x + 2)(x + 3) = x² + 3x + 2x + 6 = x² + 5x + 6 ✓"
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Use the zero product property",
+            "explanation": "If (x + 2)(x + 3) = 0, then either x + 2 = 0 or x + 3 = 0. This gives us two equations to solve."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Solve each equation",
+            "explanation": "x + 2 = 0 → x = -2, and x + 3 = 0 → x = -3. So the solutions are x = -2 and x = -3."
+          },
+          {
+            "id": "step-5",
+            "step": 5,
+            "description": "Check both solutions",
+            "explanation": "For x = -2: (-2)² + 5(-2) + 6 = 4 - 10 + 6 = 0 ✓. For x = -3: (-3)² + 5(-3) + 6 = 9 - 15 + 6 = 0 ✓"
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Using the Quadratic Formula",
+        "problem": "Solve: 2x² - 7x + 3 = 0",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Identify a, b, and c values",
+            "explanation": "In the form ax² + bx + c = 0, we have: a = 2, b = -7, c = 3"
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Calculate the discriminant",
+            "explanation": "b² - 4ac = (-7)² - 4(2)(3) = 49 - 24 = 25. Since this is positive, we have two real solutions."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Apply the quadratic formula",
+            "explanation": "x = (-b ± √(b² - 4ac)) / (2a) = (-(-7) ± √25) / (2×2) = (7 ± 5) / 4"
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Calculate both solutions",
+            "explanation": "x₁ = (7 + 5) / 4 = 12/4 = 3, and x₂ = (7 - 5) / 4 = 2/4 = 1/2. So x = 3 or x = 1/2."
+          },
+          {
+            "id": "step-5",
+            "step": 5,
+            "description": "Verify the solutions",
+            "explanation": "For x = 3: 2(3)² - 7(3) + 3 = 18 - 21 + 3 = 0 ✓. For x = 1/2: 2(1/4) - 7(1/2) + 3 = 1/2 - 7/2 + 3 = 0 ✓"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": {
+    "id": "functions",
+    "theory": "A function is a special relationship between inputs (x-values) and outputs (y-values) where each input has exactly one output. We write functions as f(x) = ... or y = ...\n\nKey Concepts:\n• Domain: All possible input values (x-values)\n• Range: All possible output values (y-values)  \n• Function Notation: f(x) means 'f of x' or 'the function f evaluated at x'\n• Vertical Line Test: A graph represents a function if any vertical line crosses it at most once\n\nTypes of Functions:\n• Linear: f(x) = mx + b (straight line)\n• Quadratic: f(x) = ax² + bx + c (parabola)\n• Exponential: f(x) = aˣ (curved growth/decay)\n• Absolute Value: f(x) = |x| (V-shaped)\n\nFunction Operations:\n• Evaluation: Find f(a) by substituting a for x\n• Composition: (f ∘ g)(x) = f(g(x))\n• Inverse: f⁻¹(x) undoes what f(x) does",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Evaluating Functions",
+        "problem": "Given f(x) = 2x² - 3x + 1, find f(4) and f(-2)",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Substitute x = 4 into the function",
+            "explanation": "f(4) = 2(4)² - 3(4) + 1. We replace every x in the function with 4."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Calculate f(4) step by step",
+            "explanation": "f(4) = 2(16) - 12 + 1 = 32 - 12 + 1 = 21. So f(4) = 21."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Substitute x = -2 into the function",
+            "explanation": "f(-2) = 2(-2)² - 3(-2) + 1. Remember that (-2)² = 4 (negative times negative is positive)."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Calculate f(-2) step by step",
+            "explanation": "f(-2) = 2(4) - 3(-2) + 1 = 8 + 6 + 1 = 15. So f(-2) = 15."
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Finding Domain and Range",
+        "problem": "Find the domain and range of f(x) = √(x - 3)",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Determine restrictions for the domain",
+            "explanation": "For square roots, the expression inside must be non-negative. So we need x - 3 ≥ 0."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Solve the inequality",
+            "explanation": "x - 3 ≥ 0 means x ≥ 3. Therefore, the domain is all real numbers greater than or equal to 3: [3, ∞)."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Determine the range",
+            "explanation": "Since √(x - 3) represents the principal square root, the output is always non-negative. The minimum value occurs when x = 3."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Find the minimum value",
+            "explanation": "When x = 3: f(3) = √(3 - 3) = √0 = 0. As x increases, f(x) increases without bound. So the range is [0, ∞)."
+          }
+        ]
+      }
+    ]
+  },
+  "systems-of-equations": {
+    "id": "systems-of-equations",
+    "theory": "A system of equations is a collection of two or more equations with the same variables. The solution is the set of values that satisfies all equations simultaneously.\n\nSolution Methods:\n\n1. Graphing Method: Graph both equations and find intersection points\n2. Substitution Method: Solve one equation for a variable, substitute into the other\n3. Elimination Method: Add/subtract equations to eliminate a variable\n\nTypes of Solutions:\n• One Solution: Lines intersect at exactly one point (consistent and independent)\n• No Solution: Lines are parallel (inconsistent)\n• Infinite Solutions: Lines are identical (consistent and dependent)\n\nApplications:\n• Break-even problems\n• Mixture problems  \n• Distance/rate/time problems\n• Age problems",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Substitution Method",
+        "problem": "Solve the system: y = 2x + 1 and 3x + y = 11",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Identify which equation is already solved",
+            "explanation": "The first equation y = 2x + 1 is already solved for y. This makes substitution straightforward."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Substitute into the second equation",
+            "explanation": "Replace y in the second equation: 3x + (2x + 1) = 11. Now we have one equation with one variable."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Solve for x",
+            "explanation": "3x + 2x + 1 = 11 → 5x + 1 = 11 → 5x = 10 → x = 2"
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Find y using the x-value",
+            "explanation": "Substitute x = 2 into y = 2x + 1: y = 2(2) + 1 = 5. So the solution is (2, 5)."
+          },
+          {
+            "id": "step-5",
+            "step": 5,
+            "description": "Check the solution in both equations",
+            "explanation": "Equation 1: y = 2x + 1 → 5 = 2(2) + 1 = 5 ✓. Equation 2: 3x + y = 11 → 3(2) + 5 = 11 ✓"
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Elimination Method",
+        "problem": "Solve the system: 2x + 3y = 7 and 4x - 3y = 5",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Observe the coefficients",
+            "explanation": "Notice that the y-coefficients are 3 and -3. They are opposites, so adding the equations will eliminate y."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Add the equations",
+            "explanation": "(2x + 3y) + (4x - 3y) = 7 + 5. This gives us: 6x + 0y = 12, or simply 6x = 12."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Solve for x",
+            "explanation": "6x = 12 → x = 2. We've eliminated y and found x."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Substitute to find y",
+            "explanation": "Use x = 2 in the first equation: 2(2) + 3y = 7 → 4 + 3y = 7 → 3y = 3 → y = 1"
+          },
+          {
+            "id": "step-5",
+            "step": 5,
+            "description": "Verify the solution",
+            "explanation": "Check (2, 1) in both equations: 2(2) + 3(1) = 7 ✓ and 4(2) - 3(1) = 5 ✓. The solution is (2, 1)."
+          }
+        ]
+      }
+    ]
+  },
+  "exponential-functions": {
+    "id": "exponential-functions",
+    "theory": "Exponential functions have the form f(x) = abˣ where a ≠ 0, b > 0, and b ≠ 1. The variable x is in the exponent, which creates rapid growth or decay.\n\nKey Properties:\n• Base b > 1: Exponential growth (curve rises from left to right)\n• Base 0 < b < 1: Exponential decay (curve falls from left to right)\n• Domain: All real numbers (-∞, ∞)\n• Range: (0, ∞) if a > 0, (-∞, 0) if a < 0\n• y-intercept: (0, a)\n• Horizontal asymptote: y = 0\n\nExponent Rules:\n• aˣ · aʸ = aˣ⁺ʸ\n• aˣ ÷ aʸ = aˣ⁻ʸ\n• (aˣ)ʸ = aˣʸ\n• a⁰ = 1\n• a⁻ˣ = 1/aˣ\n\nApplications: Population growth, radioactive decay, compound interest, bacterial growth",
+    "examples": [
+      {
+        "id": "example-1",
+        "title": "Exponential Growth",
+        "problem": "A bacteria culture starts with 100 bacteria and doubles every 3 hours. Write an equation and find the population after 12 hours.",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Identify the initial amount and growth factor",
+            "explanation": "Initial amount a = 100 bacteria. Since the population doubles every 3 hours, the base b = 2, but we need to adjust for the time period."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Determine the time relationship",
+            "explanation": "Since doubling occurs every 3 hours, in t hours there are t/3 doubling periods. So the equation is P(t) = 100 · 2^(t/3)."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Calculate the population after 12 hours",
+            "explanation": "P(12) = 100 · 2^(12/3) = 100 · 2^4 = 100 · 16 = 1,600 bacteria."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Verify the result makes sense",
+            "explanation": "Check: Hour 0: 100, Hour 3: 200, Hour 6: 400, Hour 9: 800, Hour 12: 1,600. This matches our formula."
+          }
+        ]
+      },
+      {
+        "id": "example-2",
+        "title": "Solving Exponential Equations",
+        "problem": "Solve for x: 3^(2x+1) = 27",
+        "solution": [
+          {
+            "id": "step-1",
+            "step": 1,
+            "description": "Express both sides with the same base",
+            "explanation": "Notice that 27 = 3³, so we can rewrite the equation as 3^(2x+1) = 3³."
+          },
+          {
+            "id": "step-2",
+            "step": 2,
+            "description": "Use the property: if aᵐ = aⁿ, then m = n",
+            "explanation": "Since the bases are equal, the exponents must be equal: 2x + 1 = 3."
+          },
+          {
+            "id": "step-3",
+            "step": 3,
+            "description": "Solve the linear equation",
+            "explanation": "2x + 1 = 3 → 2x = 2 → x = 1."
+          },
+          {
+            "id": "step-4",
+            "step": 4,
+            "description": "Check the solution",
+            "explanation": "Substitute x = 1: 3^(2(1)+1) = 3^3 = 27 ✓. The solution is correct."
+          }
+        ]
+      }
+    ]
+  }
+}
